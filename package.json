@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "prima-deploy": "npx prisma migrate deploy"
+    "prisma-deploy": "npx prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
