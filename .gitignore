@@ -1,5 +1,6 @@
 # Keep environment variables out of version control
 .env
 dev.db
+dev.db-journal
 migrations
 node_modules
