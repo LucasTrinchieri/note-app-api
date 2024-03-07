@@ -2,3 +2,4 @@
 .env
 dev.db
 migrations
+node_modules
