@@ -11,3 +11,5 @@ app.use(cors())
 app.use('/notes', notesRouter)
 
 app.listen(PORT)
+
+export default app
