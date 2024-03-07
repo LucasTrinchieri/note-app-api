@@ -15,6 +15,13 @@ trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 # Install dependencies
 npm install
 
+# Generate Prisma files
+echo "Generating Prisma files..."
+npx prisma generate || {
+    echo "Error generating Prisma files."
+    exit 1
+}
+
 # Apply Prisma migrations
 echo "Applying Prisma migrations..."
 npx prisma migrate deploy || {
