@@ -1,33 +1,25 @@
 #!/bin/bash
 
-# Función para manejar errores
+# Function to handle errors
 handle_error() {
     local lineno="$1"
     local message="$2"
-    echo "Error en la línea $lineno: $message"
-    # Salir con un código de error
+    echo "Error at line $lineno: $message"
+    # Exit with error code
     exit 1
 }
 
-# Configurar manejo de errores
+# Set up error handling
 trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Generar archivos de Prisma
-echo "Generando archivos de Prisma..."
-npx prisma generate || {
-    echo "Error al generar archivos de Prisma."
-    exit 1
-}
-
-# Aplicar migraciones de Prisma
-echo "Aplicando migraciones de Prisma..."
+# Apply Prisma migrations
+echo "Applying Prisma migrations..."
 npx prisma migrate deploy || {
-    echo "Error al aplicar migraciones de Prisma."
+    echo "Error applying Prisma migrations."
     exit 1
 }
 
-echo "Despliegue completado con éxito."
-
+echo "Deployment completed successfully."
