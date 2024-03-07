@@ -15,8 +15,6 @@ trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 # Install dependencies
 npm install
 
-cd /opt/render/project/src/node_modules/.bin/prisma
-
 # Generate Prisma files
 echo "Generating Prisma files..."
 npx prisma generate || {
