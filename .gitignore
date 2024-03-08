@@ -2,5 +2,4 @@
 .env
 dev.db
 dev.db-journal
-migrations
 node_modules

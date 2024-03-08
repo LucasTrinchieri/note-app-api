@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "Notes" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL DEFAULT '',
+    "text" TEXT NOT NULL DEFAULT '',
+    "categories" TEXT NOT NULL DEFAULT '',
+    "state" TEXT NOT NULL DEFAULT 'UNARCHIVED',
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "lastModify" DATETIME NOT NULL
+);
